@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODUNOVA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <img src="logo.jpg" alt="CODUNOVA Logo" class="logo">
+  
+      <p class="tagline">A Software Company</p>
+    </div>
+    <nav id="nav-menu" class="hidden">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Welcome Message -->
+  <section class="welcome-section">
+    <h2 id="welcome-message"></h2>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div id="about" class="about-container">
+      <h2>About Us</h2>
+      <p>
+        At CODUNOVA, we are a Gen Z-powered software company passionate about building the future. 
+        We specialize in creating stunning websites, unique logos, and powerful data analytics solutions. 
+        We also offer complete social media management services tailored for influencers, bloggers, small brands, and startups. 
+        With creativity and technology at our core, we turn digital ideas into reality.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CODUNOVA. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    // Typing Effect for Welcome Message
+    const welcomeMessage = "Welcome to your family!";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < welcomeMessage.length) {
+        document.getElementById("welcome-message").innerHTML += welcomeMessage.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100); // Adjust typing speed here
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>

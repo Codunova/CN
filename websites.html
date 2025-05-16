@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Websites - CODUNOVA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <img src="logo.jpg" alt="CODUNOVA Logo" class="logo">
+
+      <p class="tagline">A Software Company</p>
+    </div>
+    <nav id="nav-menu" class="hidden">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Content Section -->
+  <section class="content">
+    <div class="project">
+      <h2>El Malak Church Website</h2>
+      <a href="https://elmalakchurch.github.io/elmalakmiechael/" target="_blank">Visit Site</a>
+      <p>A beautifully designed website for El Malak Church, showcasing events, services, and community updates.</p>
+    </div>
+    <div class="message">
+      <h2 id="typing-message"></h2>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CODUNOVA. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    // Typing Effect
+    const message = "I’ve worked on many projects — and now, I’m excited to make yours the second one to shine here. Ready to take the spot?";
+    let index = 0;
+
+    function typeWriter() {
+      if (index < message.length) {
+        document.getElementById("typing-message").innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50); // سرعة الكتابة
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>

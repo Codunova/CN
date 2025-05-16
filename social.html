@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media - CODUNOVA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <img src="logo.jpg" alt="CODUNOVA Logo" class="logo">
+
+      <p class="tagline">A Software Company</p>
+    </div>
+    <nav id="nav-menu" class="hidden">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Social Media Section -->
+  <section class="content">
+    <h2 id="typing-message"></h2>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CODUNOVA. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    // Typing Effect
+    const message = "We don’t market ourselves — we create waves. Ready to ride one?<br>Reach out… or keep watching.";
+    let index = 0;
+
+    function typeWriter() {
+      if (index < message.length) {
+        const currentChar = message.charAt(index);
+        if (currentChar === "<") {
+          // إذا كان هناك كود HTML (مثل <br>)، أضفه مباشرة
+          const endIndex = message.indexOf(">", index);
+          document.getElementById("typing-message").innerHTML += message.substring(index, endIndex + 1);
+          index = endIndex + 1;
+        } else {
+          document.getElementById("typing-message").innerHTML += currentChar;
+          index++;
+        }
+        setTimeout(typeWriter, 50); // سرعة الكتابة
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
